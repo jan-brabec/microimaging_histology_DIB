@@ -3,7 +3,7 @@
 
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
-# How to recompile the data
+# How to recreate the coregistered data from raw data
 1. Download the data from AIDA repository and paste them into folder "data" at the same level as this directory. This directory contains both raw and processed data as well as an example analysis, see below "Data structure" for detailed explanation of the content.
 2. The .svs files of the histology slides from the pathology slide scanner were saved as .tif files using ImageJ Bioformat plugin (Autoscale option on).
 3. Process the raw DTI data by running script meningioma_pipe in folder Step_1_Process_DTI. Detailed instructions are in the readme file in the folder.
