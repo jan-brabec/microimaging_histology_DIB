@@ -6,7 +6,7 @@
 
 # How to recreate the coregistered data from raw data
 1. Clone this repository to Your computer. Analysis performed with MATLAB version R2020a so make sure you have installed MATLAB first.
-2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder "data" at the same level as this directory (microimaging_histology_DIB). This directory contains both raw and processed data as well as an [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test). See below "Data structure" for detailed explanation of the content.
+2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder "data" at the same level as this directory (microimaging_histology_DIB). This directory contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test). See below "Data structure" for detailed explanation of the content.
 3. The .svs files of the histology slides from the pathology slide scanner were saved as .tif files using [ImageJ program with Bioformat plugin](https://imagej.nih.gov/ij/index.html) (Autoscale option on).
 4. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri), run *setup_paths* and process the raw DTI data by running script "meningioma_pipe" in the folder Step_1_Process_DTI from this repository.
 5. Create MR structure by running *create_MR* in the folder Step_2_Init.
