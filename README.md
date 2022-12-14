@@ -8,7 +8,7 @@
 1. Clone this repository to Your computer. Analysis performed with MATLAB version R2020a so make sure you have installed MATLAB first.
 2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder "data" at the same level as this directory (microimaging_histology_DIB). This directory contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test). See below "Data structure" for detailed explanation of the content.
 3. The .svs files of the histology slides from the pathology slide scanner were saved as .tif files using [ImageJ program with Bioformat plugin](https://imagej.nih.gov/ij/index.html) (Autoscale option on).
-4. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri), run *setup_paths* and process the raw DTI data by running script "meningioma_pipe" in the folder Step_1_Process_DTI from this repository.
+4. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri), run *setup_paths* and process the raw DTI data by running script *meningioma_pipe* in the folder Step_1_Process_DTI from this repository.
 5. Create MR structure by running *create_MR* in the folder Step_2_Init.
 6. Align approximately the histological slices with MR slices by running the script *register* in the folder Step_3_Coreg_rigid.
 7. Coregister the MR to histology by landmark-based approach for each sample by running the script *jb_wrap_MR2HE* in the folder Step_4_Coreg_HE_fine. See details how to operate in the readme file in the folder the folder Step_4_Coreg_HE_fine.
@@ -27,6 +27,7 @@ Each sample (1-16) has following folders:
 * structure_anisotropy folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 
 
+# Others
 * Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
