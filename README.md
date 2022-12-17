@@ -67,7 +67,10 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 8. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
 
 ## Landmark-based coregistration
+
 **Step_4_Coreg_HE_fine**
+* The for the landmark-based coregistration was written by Markus Nilsson (markus.nilsson@med.lu.se).
+
 
 
 ## Additional notes
