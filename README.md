@@ -4,7 +4,7 @@
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
 
-# How to open data
+## How to open data
 * Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files, at least when working in the MATLAB environment.
 * The data can opened using free software [Octave](https://octave.org) and stored as images (.tiff for example, image format without compression)
 
@@ -21,7 +21,7 @@ import mat73 #Imports the mat73 module
 data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 ```
 
-# Data structure
+## Data structure
 The folder contains several 16 folders where each corresponds to a single tumor sample and folder DTI_raw containing raw data.
 Each sample (1-16) has following folders:
 * raw_histo folder contains multi-image .tiff files of the histology as scanned by the digital pathology slides scanner. The .tiff files provide 3 images with red, green and blue channels separated into three different images. The metadata obtained during the digitalization of the slices are stored in the "metadata_HE.csv" or "metadata_VEGF.csv".
@@ -32,10 +32,10 @@ Each sample (1-16) has following folders:
 * structure_anisotropy folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 
 
-# How to recreate the coregistered data from raw data
+## How to recreate the coregistered data from raw data
 1. Clone this repository to Your computer. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB first. If you do not have access to MATLAB, you may try using [Octave](https://octave.org) but some functionality may not be supported.
 2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder "data" at the same level as this directory (microimaging_histology_DIB). This directory contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test). See below "Data structure" for detailed explanation of the content.
-3. The .svs files of the histology slides from the pathology slide scanner were saved as .tif files using [ImageJ program with Bioformat plugin](https://imagej.nih.gov/ij/index.html) (Autoscale option on) and here, the channels (red, green, blue) were separated into three images within a single .tiff file. The svs files are, however, not provided, because they contains patient metadata. The metadata from the slide scanner are provided in the file "
+3. The .svs files of the histology slides from the pathology slide scanner were saved as .tif files using [ImageJ](https://imagej.nih.gov/ij/index.html) but you also need to install [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.htmlhttps://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (Autoscale option on) and here, the channels (red, green, blue). were separated into three images within a single .tiff file. The svs files are, however, not provided, because they contains patient metadata. The metadata from the slide scanner are provided in the file "
 4. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri), run *setup_paths* and process the raw DTI data by running script *meningioma_pipe* in the folder Step_1_Process_DTI from this repository.
 5. Create MR structure by running *create_MR* in the folder Step_2_Init.
 6. Align approximately the histological slices with MR slices by running the script *register* in the folder Step_3_Coreg_rigid.
