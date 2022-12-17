@@ -64,10 +64,10 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 8. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
 
 ## Landmark-based coregistration
-lkjnli
+**Step_4_Coreg_HE_fine**
 
 
-# Additional notes
+## Additional notes
 * The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distribution of ImageJ containing Bioformat plugin. The red, green and blue channels were separated into three images within a single *.tif* file using Autoscale option on. The *.svs* files are not provided because they contains important metadata. The metadata from the slide scanner are, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_VEGF.csv*
 
 
