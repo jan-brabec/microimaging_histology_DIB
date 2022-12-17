@@ -4,8 +4,8 @@
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
 ## How to obtain data
-1. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
-2. Clone this repository to Your machine.
+1. Clone this repository to Your machine.
+2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test) of this data to the same folder.
 
 
