@@ -31,7 +31,7 @@ mgui %Opens GUI
 
 ```
 load filename.mat %HE.mat or VEGF.mat or similar
-imwrite(HE,'filename_tiff','tiff') %Often the structure name is HE, VEGF or similar
+imwrite(HE,'filename_tif','tif') %Often the structure name is HE, VEGF or similar
 ```
 
   * The data can also be opened in Python by using mat73 module
