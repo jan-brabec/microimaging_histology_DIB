@@ -28,7 +28,7 @@ Each sample (1-16) has following folders:
 
 # How to open data
 * Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files.
-* The data can opened using free software Octave
+* The data can opened using free software [Octave](https://octave.org)
 
 ```
 load filename.mat %Often HE.mat or VEGF.mat
