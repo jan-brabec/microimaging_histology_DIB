@@ -1,12 +1,12 @@
 # Manuscript: Coregistered H&E- and VEGF-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors
-* Code and data to the manuscript: **Brabec, J., Friedjungova, M., Vasata, D., Englund, E., Bengzon, J., Knutsson, L., van Zijl, P., Szczepankiewicz, F., Sundgren, P.C. and Nilsson, M., 2022. Coregistered H&E- and VEGF-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors. Unpublished.**
+* Code and data to the manuscript: **Brabec, J., Englund, E., Bengzon, J., Szczepankiewicz, F., Sundgren, P.C., Nilsson, M., 2022. Coregistered H&E- and VEGF-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors. Unpublished.**
 
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
 ## How to obtain data
 1. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 2. Clone this repository to Your machine.
-3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test) of this data to same folder.
+3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test) of this data to the same folder.
 
 
 ## Data formats and how to open them
