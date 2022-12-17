@@ -3,6 +3,11 @@
 
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
+## Objective
+It has been proposed that mean diffusivity (MD) and fractional anisotropy (FA) obtained from diffusion tensor imaging (DTI) is inversely proportional to cell density or tissue anisotropy, respectively. Although established across a wide range of tumors, this relation has been challenged within-tumors where and several additional histological features have been suggested.
+
+To facilitate investigation of the biological underpinnings of DTI parameters, we performed ex-vivo dMRI at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+
 ## How to obtain data
 1. Clone this repository to Your machine.
 2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
