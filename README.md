@@ -26,6 +26,25 @@ Each sample (1-16) has following folders:
 * cell_density folder contains QuPath projects and cell nuclei detected (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 * structure_anisotropy folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 
+# How to open data
+* Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files.
+* The data can opened using free software Octave
+
+```
+load filename.mat %Often HE.mat or VEGF.mat
+imwrite(HE,'filename_tiff','tiff') %Often the structure name is HE, VEGF etc
+```
+
+* The data can also be opened in Python as
+
+```
+pip install mat73
+import mat73
+data = mat73.loadmat('filename.mat')
+```
+
+
+
 
 # Others
 * Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
