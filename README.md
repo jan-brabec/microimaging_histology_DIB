@@ -28,19 +28,19 @@ Each sample (1-16) has following folders:
 
 # How to open data
 * Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files.
-* The data can opened using free software [Octave](https://octave.org)
+* The data can opened using free software [Octave](https://octave.org) and stored as images (.tiff for example, image format without compression) as:
 
 ```
 load filename.mat %Often HE.mat or VEGF.mat
 imwrite(HE,'filename_tiff','tiff') %Often the structure name is HE, VEGF etc
 ```
 
-* The data can also be opened in Python as
+* The data can also be opened in Python by using mat73 module
 
 ```
-pip install mat73
-import mat73
-data = mat73.loadmat('filename.mat')
+pip install mat73 #If you did not have mat73 installed
+import mat73 #Imports the mat73 module
+data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 ```
 
 
