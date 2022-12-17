@@ -27,7 +27,7 @@ Each sample (1-16) has following folders:
 * structure_anisotropy folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 
 # How to open data
-* Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files.
+* Most of the data can be opened in MATLAB environment because most of the data are stored as .mat -v7.3 format. This provides faster reading and writing of large files compared with storing them as .tiff files, at least when working in the MATLAB environment.
 * The data can opened using free software [Octave](https://octave.org) and stored as images (.tiff for example, image format without compression) as:
 
 ```
