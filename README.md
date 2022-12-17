@@ -44,7 +44,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 
 ## Data structure
 * The data folder contains 16 folders numbered **1** to **16** where each corresponds to a single tumor sample. Each sample (**1-16**) has following sub-folders:
-  * **raw_histo** folder contains multi-image *.tif* files of the histology as scanned by the digital pathology slides scanner. The *.tif* files provide 3 images with red, green and blue channels separated into three different images. The metadata obtained during the digitalization of the slices are stored in the *Metadata_HE.csv* and *metadata_VEGF.csv*.
+  * **raw_histo** folder contains multi-image *.tif* files of the histology as scanned by the digital pathology slides scanner. The *.tif* files provide 3 images with red, green and blue channels separated into three different images. The metadata obtained during the digitalization of the slices are stored in the *Metadata_HE.csv* and *metadata_VEGF.csv*. Samples 1 and 11 do not contain VEGF- but only H&E-stained histology slide because the VEGF file was corrupted during saving from the pathology slide scanner.
   * **init_MR** sub-folder contains DTI maps of a single slice prior to coregistration saved as *.mat* file.
   * **coreg_rigid** sub-folder contains approximately aligned histology with MR.
   * **coreg_fine** sub-folder contains coregistered DTI images in *MR.mat*, cropped H&E in *HE.mat*, defined landmarks in *HE_lm_fine.mat* and structure anisotropy map that helped to coregister the images in the file *aniso2coreg.mat* (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
@@ -68,7 +68,8 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 
 
 ## Additional notes
-* The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distribution of ImageJ containing Bioformat plugin. The red, green and blue channels were separated into three images within a single *.tif* file using Autoscale option on. The *.svs* files are not provided because they contains important metadata. The metadata from the slide scanner are, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_VEGF.csv*
+* The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distribution of ImageJ containing Bioformat plugin. The red, green and blue channels were separated into three images within a single *.tif* file using Autoscale option on. The *.svs* files are not provided because they contains important metadata. The metadata from the slide scanner are, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_VEGF.csv*.
+* Samples 1 and 11 do not contain VEGF- but only H&E-stained histology slide because the VEGF file was corrupted during saving from the pathology slide scanner.
 
 
 # Others
