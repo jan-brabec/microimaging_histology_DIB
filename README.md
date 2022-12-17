@@ -25,7 +25,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 The folder contains several 16 folders where each corresponds to a single tumor sample and folder DTI_raw containing raw data.
 Each sample (1-16) has following folders:
 * raw_histo folder contains multi-image .tiff files of the histology as scanned by the digital pathology slides scanner. The .tiff files provide 3 images with red, green and blue channels separated into three different images. The metadata obtained during the digitalization of the slices are stored in the "metadata_HE.csv" or "metadata_VEGF.csv".
-* raw_MR folder contains DTI maps prior to coregistration saved in .mat file.
+* init_MR folder contains DTI maps of a single slice prior to coregistration saved in .mat file.
 * coreg_rigid folder contains approximately aligned histology with MR.
 * coreg_fine folder contains coregistered DTI images in MR.mat, cropped H&E in HE.mat, defined landmarks in HE_lm_fine.mat and structure anisotropy map that helped to coregister the images in the file aniso2coreg.mat (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
 * cell_density folder contains QuPath projects and cell nuclei detected (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
