@@ -64,7 +64,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 ## How to recreate the coregistered data from raw data
 1. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB. If you do not have license for MATLAB, some of the MATLAB functionalities may be supported by free software [Octave](https://octave.org).
 2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
-3. Modify *dti_lls_4d_fit2param* function stored in file MDM/methods/dti_llsdti_lls_4d_fit2param.m. Add dps.fulldt = dt_1x6; anywhere after line 24. This will save the estimated full diffusion tensor which is important to calculation of the in-plane FA (FAIP).
+3. Modify *dti_lls_4d_fit2param* function stored in file mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m. Add line *dps.fulldt = dt_1x6;* anywhere after line 24. This will save the estimated full diffusion tensor which is important later on for calculation of the in-plane FA (FAIP).
 4. Process the raw DTI data by running script *a_DTI_meningiomas_pipeline* in the folder **Step_1_init** from this repository.
 5. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
 6. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
