@@ -109,7 +109,7 @@ In this step, the histology image is cropped and rotated to approximately match 
 ## Landmark-based deformable coregistration (Step 3)
 * It coregisters image B (MRI) to image A (H&E) by creating a deformable meshgrid over over image B (MRI) based on define landmarks. It also cropps image A (H&E)
 * These are defined both on both images in a way that we are certain that these landmarks are the same object in image A and B. For example, these can be tumor borders clearly visible on both histology and MRI image. Another within the tumors are high values of MD in MRI image and presence of vessels in the H&E image.
-* The landmark-based coregistration tool was written by Markus Nilsson (markus.nilsson@med.lu.se). Contact Markus for e.g. further development of the tool.
+* The landmark-based coregistration tool was written by Markus Nilsson (markus.nilsson@med.lu.se). Contact Markus for e.g. further collaboration on the development of the tool.
 
 
 ### GUI
