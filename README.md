@@ -97,7 +97,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 ### What next?
 16. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
 
-## Rigid coregistration
+## Rigid coregistration (Step 2)
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
 * Cropping: Points of the bounding box for each sample defined in *get_cropping_points*.
 * Basic rotation such as by 90 or 180 degrees: Rotations defined in *get_H_transform*.
@@ -105,7 +105,7 @@ In this step, the histology image is cropped and rotated to approximately match 
 * The validate quality of coregistration the script *Register* outputs an image in the main folder. Here, the overlap between the landmark is shown. 
 
 
-## Landmark-based deformable coregistration
+## Landmark-based deformable coregistration (Step 3)
 
 * The for the landmark-based coregistration was written by Markus Nilsson (markus.nilsson@med.lu.se).
 * Run *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**
