@@ -101,7 +101,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
 * Cropping: Points of the bounding box for each sample defined in *get_cropping_points*.
 * Basic rotation such as by 90 or 180 degrees: Rotations defined in *get_H_transform*.
-* More precise rotation calculated from landmarks on DTI map (MD or FA) and histology images: landmark points defined in *get_landmarks*. Out of these a more precise rotation angle is calculated.
+* More precise rotation calculated from landmarks on DTI map (MD or FA) and histology images: landmark points defined in *get_landmarks*. Out of these a more precise rotation angle is calculated. Since the goal is to define rotation angle only, these are often defined on the tumor borders clearly visible in both H&E and MRI image.
 * The validate quality of coregistration the script *Register* outputs an image in the main folder. Here, the overlap between the landmark is shown. 
 
 
