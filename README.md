@@ -4,9 +4,8 @@
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
 ## Objective
-It has been proposed that mean diffusivity (MD) and fractional anisotropy (FA) obtained from diffusion tensor imaging (DTI) is inversely proportional to cell density or tissue anisotropy, respectively. Although established across a wide range of tumors, this relation has been challenged within-tumors where and several additional histological features have been suggested.
 
-To facilitate investigation of the biological underpinnings of DTI parameters, we performed ex-vivo dMRI at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+To facilitate investigation of the biological underpinnings of DTI parameters, we performed ex-vivo diffusion tensor imaging (DTI) at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as the processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 
 ## How to obtain data
 1. Clone this repository to Your machine.
