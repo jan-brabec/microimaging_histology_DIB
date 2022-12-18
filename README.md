@@ -77,7 +77,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
 * Cropping: Points of the bounding box for each sample defined in *get_cropping_points*.
 * Basic rotation such as by 90 or 180 degrees: Rotations defined in *get_H_transform*.
-* More precise rotation calculated from landmarks on DTI map (MD or FA) and histology images: landmark points defined in *get_landmarks*. Out of these the rotation angle is calculated.
+* More precise rotation calculated from landmarks on DTI map (MD or FA) and histology images: landmark points defined in *get_landmarks*. Out of these a more precise rotation angle is calculated.
 
 
 ## Landmark-based deformable coregistration
