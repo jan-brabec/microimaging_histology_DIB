@@ -83,9 +83,20 @@ In this step, the histology image is cropped and rotated to approximately match 
 
 ## Landmark-based deformable coregistration
 
-**Step_4_Coreg_HE_fine**
 * The for the landmark-based coregistration was written by Markus Nilsson (markus.nilsson@med.lu.se).
+* Run *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**
+% A - histology image
+% B - MR image
 
+% a - add landmark
+% d - delete landmark
+% n - go to next landmark
+% p - go to previous landmark
+% s - save landmark file
+% l - load landmark file
+% i - show the interpolation grid
+% r - compute final results, store in result_fn
+% 
 
 
 ## Additional notes
