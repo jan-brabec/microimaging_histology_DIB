@@ -66,7 +66,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
 3. Process the raw DTI data by running script *a_DTI_meningiomas_pipeline* in the folder **Step_1_init** from this repository.
 4. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
-5. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
+5. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
 6. 
 7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**.
 8. Coregister the MR to histology by landmark-based approach for each sample by running the script *jb_wrap_MR2HE* in the folder **Step_4_Coreg_HE_fine**. See instructions in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
