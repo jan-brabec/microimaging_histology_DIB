@@ -72,7 +72,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 3. Modify *dti_lls_4d_fit2param* function stored in file *mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m*. This is needed to save the estimated full diffusion tensor which is important later on for calculation of the in-plane FA (FAIP). Add line following code anywhere after line 24
 
 ```
-dps.fulldt = dt_1x6; %paste anywhere below line 24
+dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m
 ```
 
 
