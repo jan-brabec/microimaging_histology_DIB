@@ -14,7 +14,7 @@ To facilitate investigation of the biological underpinnings of DTI parameters, w
 
 
 ## Data formats and how to open them
-* Raw histological slides are stored as multi-image *.tif* files with separated RGB channels. We recommend opening and viewing them using MATLAB
+* Raw histological slides are stored as multi-image *.tif* files with separated RGB channels. We recommend opening and viewing them using MATLAB:
 
 ```
 H(:,:,1) = imread('filename.tif'),'Index',1);
@@ -26,7 +26,7 @@ axis image off;
 ```
 
 
-* Raw DTI images are stored as compressed *.nii.gz* files. These can be viewed e.g. by GUI in [Multidimensional Diffusion MRI software (GitHub)](https://github.com/markus-nilsson/md-dmri)
+* Raw DTI images are stored as compressed *.nii.gz* files. These can be viewed e.g. by GUI in [Multidimensional Diffusion MRI software (GitHub)](https://github.com/markus-nilsson/md-dmri).
 
 ```
 %Clone repository first from https://github.com/markus-nilsson/md-dmri 
@@ -34,14 +34,14 @@ run setup_paths %Sets paths into the environment
 mgui %Opens GUI
 ```
 * Processed MR and histological slides are stored as *.mat* files and larger ones as *.mat -v7.3* files. The reason for chosing *.mat -v7.3* was that it provided faster reading and writing compared with storing them as *.tif* files, at least for the MATLAB environment.
-  * The *.mat (-v7.3)* can opened using MATLAB that necessitate license but also by a free software [Octave](https://octave.org). The images in Octave can be stored as *.tif* images instead (or other image formats without compression)
+  * The *.mat (-v7.3)* can opened using MATLAB that necessitate license but also by a free software [Octave](https://octave.org). The images in Octave can be stored as *.tif* images instead (or other image formats without compression):
 
 ```
 load filename.mat %HE.mat or VEGF.mat or similar
 imwrite(HE,'filename_tif','tif') %Often the structure name is HE, VEGF or similar
 ```
 
-  * The data can also be opened in Python by using mat73 module
+  * The data can also be opened in Python by using mat73 module:
 
 ```
 pip install mat73 #If you did not have mat73 installed
@@ -57,18 +57,18 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
   * **coreg_fine** sub-folder contains coregistered DTI images in *MR.mat*, cropped H&E in *HE.mat*, defined landmarks in *HE_lm_fine.mat* and structure anisotropy map that helped to coregister the images in the file *aniso2coreg.mat* (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
   * **cell_density** sub-folder contains QuPath project with cell nuclei detected (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
   * **structure_anisotropy** sub-folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
-* The data folder also contains **DTI_raw**
+* The data folder also contains **DTI_raw**.
   * **raw** sub-folder contains raw *.nii* files from the two measurements of the sample holder (upper part and lower part of the sample holder)
   * **processed** sub-folder contains processed raw DTI data by DTI pipeline in [Step_1_Process_DTI](https://github.com/jan-brabec/microimaging_histology_DIB/tree/main/Step_1_Process_DTI).
 
 ## Summary of the final coregistered data structure
-* Contains MR S0, MD, FA, FAIP, PA, DWI coregistered to 
+* Contains MR S0, MD, FA, FAIP, PA, AD, RD DWI coregistered to 
 
 ## How to recreate the coregistered data from raw data
 
 ### Step 0: Preparations
 1. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB. If you do not have license for MATLAB, some of the MATLAB functionalities may be supported by free software [Octave](https://octave.org).
-2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
+2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*.
 3. Modify *dti_lls_4d_fit2param* function stored in file *mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m*. This is needed to save the estimated full diffusion tensor which is important later on for calculation of the in-plane FA (FAIP). Add line following code anywhere after line 24
 
 ```
@@ -93,10 +93,10 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 
 ### Step 4: Rigid coregistration of VEGF to H&E images
 
-14. Coregister the VEGF-stained histology to H&E-stained histology by running the script *jb_wrap_VEGF2HE* in the folder **Step_5_Coreg_VEGF_to_HE** for each sample.
+12. Coregister the VEGF-stained histology to H&E-stained histology by running the script *jb_wrap_VEGF2HE* in the folder **Step_5_Coreg_VEGF_to_HE** for each sample.
 
 ### What next?
-16. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
+13. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 
 ## Rigid coregistration (Step 2)
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
@@ -107,13 +107,13 @@ In this step, the histology image is cropped and rotated to approximately match 
 
 
 ## Landmark-based deformable coregistration (Step 3)
-* It coregisters image B (MRI) to image A (H&E) by creating a deformable meshgrid over over image B (MRI) based on define landmarks. It also cropps image A (H&E)
+* It coregisters image B (MRI) to image A (H&E) by creating a deformable meshgrid over over image B (MRI) based on define landmarks. It also cropps image A (H&E).
 * These are defined both on both images in a way that we are certain that these landmarks are the same object in image A and B. For example, these can be tumor borders clearly visible on both histology and MRI image. Another within the tumors are high values of MD in MRI image and presence of vessels in the H&E image.
 * The landmark-based coregistration tool was written by Markus Nilsson (markus.nilsson@med.lu.se). Contact Markus for e.g. further collaboration on the development of the tool.
 
 
 ### GUI
-* Practically, if you run *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine** afollowing GUI will appear
+* The coregistration can be performed in GUI by running *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**.
 
 ![alt text](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/Landmark_coregistration.png?raw=true)
 
