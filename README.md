@@ -82,7 +82,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 5. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
 6. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
 
-### Step 2: Rigid coregistration of HE images to MRI
+### Step 2: Rigid coregistration of H&E images to MRI
 6. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**. See details in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
 
 ### Step 3: Landmark-based deformable coregistration of MRI to HE images
@@ -90,7 +90,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 11. Create a bounding box around H&E- and VEGF-stained histology by running *draw_HE_mask* in folder **Step_3_Coreg_HE_fine**.
 12. Coregister the MR to histology by landmark-based approach for each sample by running the script *jb_wrap_MR2HE* in the folder **Step_4_Coreg_HE_fine**. See instructions in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
 
-### Step 4: Rigid coregistration of VEGF to HE images
+### Step 4: Rigid coregistration of VEGF to H&E images
 
 14. Coregister the VEGF-stained histology to H&E-stained histology by running the script *jb_wrap_VEGF2HE* in the folder **Step_5_Coreg_VEGF_to_HE** for each sample.
 
@@ -106,7 +106,7 @@ In this step, the histology image is cropped and rotated to approximately match 
 
 
 ## Landmark-based deformable coregistration (Step 3)
-* It coregisters image B (MRI) to image A (HE) by creating a deformable meshgrid over over image B (MRI) based on define landmarks.
+* It coregisters image B (MRI) to image A (H&E) by creating a deformable meshgrid over over image B (MRI) based on define landmarks. It also cropps image A (H&E)
 * These are defined both on both images in a way that we are certain that these landmarks are the same object in image A and B.
 * One of such examples can be sharp borders of the histology and MRI image. Another example are high values of mean diffusivity in MRI image and vessels on histology.
 * The landmark-based coregistration tool was written by Markus Nilsson (markus.nilsson@med.lu.se).
