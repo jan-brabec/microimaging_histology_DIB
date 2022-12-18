@@ -82,6 +82,7 @@ In this step, the histology image is cropped and rotated to approximately match 
 * Cropping: Points of the bounding box for each sample defined in *get_cropping_points*.
 * Basic rotation such as by 90 or 180 degrees: Rotations defined in *get_H_transform*.
 * More precise rotation calculated from landmarks on DTI map (MD or FA) and histology images: landmark points defined in *get_landmarks*. Out of these a more precise rotation angle is calculated.
+* The validate quality of coregistration the script *Register* outputs an image in the main folder. Here, the overlap between the landmark is shown. 
 
 
 ## Landmark-based deformable coregistration
