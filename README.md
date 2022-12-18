@@ -106,21 +106,31 @@ In this step, the histology image is cropped and rotated to approximately match 
 
 
 ## Landmark-based deformable coregistration (Step 3)
+* It coregisters image B (MRI) to image A (HE) by creating a deformable meshgrid over over image B (MRI) based on define landmarks.
+* These are defined both on both images in a way that we are certain that these landmarks are the same object in image A and B.
+* One of such examples can be sharp borders of the histology and MRI image. Another example are high values of mean diffusivity in MRI image and vessels on histology.
+* The landmark-based coregistration tool was written by Markus Nilsson (markus.nilsson@med.lu.se).
 
-* The for the landmark-based coregistration was written by Markus Nilsson (markus.nilsson@med.lu.se).
-* Run *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**
-% A - histology image
-% B - MR image
 
-% a - add landmark
-% d - delete landmark
-% n - go to next landmark
-% p - go to previous landmark
-% s - save landmark file
-% l - load landmark file
-% i - show the interpolation grid
-% r - compute final results, store in result_fn
-% 
+### GUI
+* Practically, if you run *Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine** afollowing GUI will appear
+
+![alt text](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/Landmark_coregistration.png?raw=true)
+
+In total 6 subplots appear.
+* In the left column above we can observe H&E images with defined 10 landmarks (white color) where the active (6th) landmark is presented with yellow color. Similarly, below we can observe MD images with the same landmarks.
+* In the middle column we can observe a zoom-in on the active landmark in the H&E image (above) and MR (below) to fine tune its position.
+* In the right column we can observe deformable grid. Upper row shows grid over H&E. This is not deformed as H&E image is only cropped. The bottom row shows grid over MR image (here MD). The grid is deformed based on the distance between the landmarks.
+
+* The GUI can be controlled by pressing:
+  * a - adds landmark
+  * d - deletes landmark
+  * l - loads landmark file
+  * s - saves landmark file
+  * n - goes to next landmark
+  * p - goes to previous landmark
+  * i - shows the interpolation grid
+  * r - computes final results and stores it in the folder **dd**
 
 
 ## Additional notes
