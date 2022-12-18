@@ -141,8 +141,8 @@ mn_reg_finetune(HE,MR.MD,lm_fn,o_pth,MR,'MR2HE',sample)
 to this code
 
 ```
-load(fullfile(o_pth,'aniso2coreg.mat'),'cFA')
-mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,sample)
+load(fullfile(o_pth,'aniso2coreg.mat'),'cFA') %this will load the calculated structure anisotropy map
+mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample) %this will coregister FAIP map to structure anisotropy map
 ```
 
 
