@@ -61,6 +61,9 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
   * **raw** sub-folder contains raw *.nii* files from the two measurements of the sample holder (upper part and lower part of the sample holder)
   * **processed** sub-folder contains processed raw DTI data by DTI pipeline in [Step_1_Process_DTI](https://github.com/jan-brabec/microimaging_histology_DIB/tree/main/Step_1_Process_DTI).
 
+## Summary of the final coregistered data structure
+* Contains MR S0, MD, FA, FAIP, PA, DWI coregistered to 
+
 ## How to recreate the coregistered data from raw data
 1. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB. If you do not have license for MATLAB, some of the MATLAB functionalities may be supported by free software [Octave](https://octave.org).
 2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
