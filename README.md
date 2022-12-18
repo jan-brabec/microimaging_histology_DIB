@@ -63,12 +63,15 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 
 ## How to recreate the coregistered data from raw data
 1. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB. If you do not have license for MATLAB, some of the MATLAB functionalities may be supported by free software [Octave](https://octave.org).
-3. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri), run *setup_paths* and process the raw DTI data by running script *meningioma_pipe* in the folder Step_1_Process_DTI from this repository.
-4. Create MR structure by running *create_MR* in the folder Step_2_Init.
-5. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**.
-6. Coregister the MR to histology by landmark-based approach for each sample by running the script *jb_wrap_MR2HE* in the folder **Step_4_Coreg_HE_fine**. See instructions in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
-7. Coregister the VEGF-stained histology to H&E-stained histology by running the script *jb_wrap_VEGF2HE* in the folder **Step_5_Coreg_VEGF_to_HE** for each sample.
-8. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
+2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
+3. Process the raw DTI data by running script *a_DTI_meningiomas_pipeline* in the folder **Step_1_init** from this repository.
+4. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
+5. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
+6. 
+7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**.
+8. Coregister the MR to histology by landmark-based approach for each sample by running the script *jb_wrap_MR2HE* in the folder **Step_4_Coreg_HE_fine**. See instructions in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
+9. Coregister the VEGF-stained histology to H&E-stained histology by running the script *jb_wrap_VEGF2HE* in the folder **Step_5_Coreg_VEGF_to_HE** for each sample.
+10. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)
 
 ## Landmark-based coregistration
 
