@@ -69,7 +69,13 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 ### Step 0: Preparations
 1. Analysis was performed with MATLAB version R2020a so make sure you have installed MATLAB. If you do not have license for MATLAB, some of the MATLAB functionalities may be supported by free software [Octave](https://octave.org).
 2. Clone [Multidimensional diffusion MRI repository](https://github.com/markus-nilsson/md-dmri) and run *setup_paths*
-3. Modify *dti_lls_4d_fit2param* function stored in file *mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m*. Add line *dps.fulldt = dt_1x6;* anywhere after line 24. This will save the estimated full diffusion tensor which is important later on for calculation of the in-plane FA (FAIP).
+3. Modify *dti_lls_4d_fit2param* function stored in file *mdm-dmri/methods/dti_llsdti_lls_4d_fit2param.m*. This is needed to save the estimated full diffusion tensor which is important later on for calculation of the in-plane FA (FAIP). Add line following code anywhere after line 24
+
+```
+dps.fulldt = dt_1x6; %paste anywhere below line 24
+```
+
+
 
 ### Step 1: Initialize
 4. Process the raw DTI data by running script *a_DTI_meningiomas_pipeline* in the folder **Step_1_init** from this repository.
