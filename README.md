@@ -130,7 +130,20 @@ In total 6 subplots appear.
   * n - goes to next landmark
   * p - goes to previous landmark
   * i - shows the interpolation grid
-  * r - computes final results and stores it in the folder **dd**
+  * r - computes final results and stores it in the folder **coreg_fine**
+
+* We can also define landmarks based on FAIP and calculated structure anisotropy map. This we can do by exchanging the code in *Coreg_fine_MR_to_HE*
+
+```
+mn_reg_finetune(HE,MR.MD,lm_fn,o_pth,MR,'MR2HE',sample)
+```
+
+to this code
+
+```
+load(fullfile(o_pth,'aniso2coreg.mat'),'cFA')
+mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,sample)
+```
 
 
 ## Additional notes
