@@ -106,12 +106,12 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 ### Step 4: Rigid coregistration of VEGF to H&E images
 
 12. Define landmarks on the H&E and VEGF maps by running script *a_Define_landmarks* in the folder **Step_5_Coreg_VEGF_to_HE**. The interface is the same as in the previous step but do not interpolate to obtain the deformable grid or register. Define landmarks and click 's' to save them.
-12. Coregister the VEGF-stained histology to H&E-stained histology by running the script *b_Coregister_VEGF_to_HE*.
-13. Investigate the quality of coregistration by running script *c_Validate_coregistration* and repeat defining newer landmarks if necessary.
+13. Coregister the VEGF-stained histology to H&E-stained histology by running the script *b_Coregister_VEGF_to_HE*.
+14. Investigate the quality of coregistration by running script *c_Validate_coregistration* and repeat defining newer landmarks if necessary.
 
 ### Step 5: View data
 
-13. View the data by running the script *view_data* in the folder **Step_5_View_data**. Within this folder, you may also directly use function
+15. View the data by running the script *view_data* in the folder **Step_5_View_data**. Within this folder, you may also directly use function
 
 ```
 view_HE_VEGF_MR(sample)
@@ -119,7 +119,7 @@ view_HE_VEGF_MR(sample)
 
 
 ### What next?
-13. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+16. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 
 ## Details of rigid coregistration (Step 2)
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
