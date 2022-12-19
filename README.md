@@ -13,7 +13,7 @@ To facilitate investigation of the biological underpinnings of DTI parameters, w
 3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test) of this data to the same folder (**microimaging_histology_DIB**).
 
 
-## Data formats and how to open them
+## Data formats and how to read them
 * Raw histological slides are stored as multi-image *.tif* files with separated RGB channels. We recommend viewing them using MATLAB:
 
 ```
@@ -24,6 +24,13 @@ H(:,:,3) = imread('filename.tif'),'Index',3);
 imagesc(H);
 axis image off;
 ```
+
+* We have prepared a function that allows to view H&E, VEGF as well as Mean diffusivity and in-plane fractional anisotropy (FAIP). It allows also to zoom-in also on particular regions of the histology of DTI map by clicking on one of the maps. Navigate yourself to the folder **Step_5_View_data** and try
+
+```
+view_HE_VEGF_MR(sample)
+```
+
 
 
 * Raw DTI images are stored as compressed *.nii.gz* files. These can be viewed e.g. by GUI in [Multidimensional Diffusion MRI software (GitHub)](https://github.com/markus-nilsson/md-dmri).
