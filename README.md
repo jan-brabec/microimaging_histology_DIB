@@ -93,10 +93,12 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 6. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
 
 ### Step 2: Rigid coregistration of H&E images to MRI
-7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**. See details in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
+7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**. See details in the section [Details of ridig coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#details-of-rigid-coregistration-step-2) below.
+
+
 
 ### Step 3: Landmark-based deformable coregistration of MRI to H&E images
-8. Coregister the MR to histology by landmark-based approach for each sample by running the script *a_Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**. See further instructions below in the section [land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
+8. Coregister the MR to histology by landmark-based approach for each sample by running the script *a_Coreg_fine_MR_to_HE* in the folder **Step_4_Coreg_HE_fine**. See further instructions below in the section [Details of land-mark based coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#landmark-based-coregistration) below.
 9. Verify the position by *b_Validate_coregistration*. Click on either H&E or MRI image in the upper row and the bottom row will show zoom-in in the MRI image as well as corresponding histology patch.
 10. Create a mask around H&E imageby running *draw_HE_mask* in folder **Step_3_Coreg_HE_fine**.
 11. Apply H&E mask to all coregistered images by *d_apply_HE_mask*. This will replace HE.mat files in the **Step_3_Coreg_HE_fine** with the same H&E but masked. This will also store downsample H&E mask. For quantification analyses, it is useful to combine ROI around MR images with downsampled HE mask. This will make sure that only tumor regions are selected for the analysis.
