@@ -70,9 +70,9 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 
 ## Summary of the coregistered MR features to the H&E
 * These are stored in the *MR* structure in *MR.mat* and contain
-  * S0 map, mean diffusivity (*MD*), fractional anisotropy (*FA*), in-plane fractional anisotropy (*FAIP*), axial diffuvisity (*AD*), radial diffusivity (*RD*)
-  * The structure also contains orientationally averaged diffusion-weighted data at 100 s/mm2 (single measurement), 1000 s/mm2 (averaged across 6 directions) and 3000 s/mm2 (also averaged across six directions) in the field *PA*.
-  * The structure also contains all 13 diffusion-weighted measurements before averaging or calculating maps in field *DWI*
+  * Calculated maps : S0 map, mean diffusivity (*MD*), fractional anisotropy (*FA*), in-plane fractional anisotropy (*FAIP*), axial diffuvisity (*AD*), radial diffusivity (*RD*).
+  * Orientationally averaged diffusion-weighted data at 100 s/mm2 (single measurement), 1000 s/mm2 (averaged across 6 directions) and 3000 s/mm2 (also averaged across six directions) in the field *PA*.
+  * All 13 diffusion-weighted measurements before averaging or calculating maps in field *DWI*.
 
 ## How to recreate the coregistered data from raw data
 
