@@ -14,7 +14,7 @@ To facilitate investigation of the biological underpinnings of DTI parameters, w
 
 
 ## Data formats and how to open them
-* Raw histological slides are stored as multi-image *.tif* files with separated RGB channels. We recommend opening and viewing them using MATLAB:
+* Raw histological slides are stored as multi-image *.tif* files with separated RGB channels. We recommend viewing them using MATLAB:
 
 ```
 H(:,:,1) = imread('filename.tif'),'Index',1);
