@@ -68,8 +68,11 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
   * **raw** sub-folder contains raw *.nii* files from the two measurements of the sample holder (upper part and lower part of the sample holder)
   * **processed** sub-folder contains processed raw DTI data by DTI pipeline in [Step_1_Process_DTI](https://github.com/jan-brabec/microimaging_histology_DIB/tree/main/Step_1_Process_DTI).
 
-## Summary of the final coregistered data structure
-* Contains MR S0, MD, FA, FAIP, PA, AD, RD DWI coregistered to 
+## Summary of the coregistered MR features to the H&E
+* These are stored in the *MR* structure in *MR.mat* and contain
+  * S0 map, mean diffusivity (*MD*), fractional anisotropy (*FA*), in-plane fractional anisotropy (*FAIP*), axial diffuvisity (*AD*), radial diffusivity (*RD*)
+  * The structure also contains orientationally averaged diffusion-weighted data at 100 s/mm2 (single measurement), 1000 s/mm2 (averaged across 6 directions) and 3000 s/mm2 (also averaged across six directions) in the field *PA*.
+  * The structure also contains all 13 diffusion-weighted measurements before averaging or calculating maps in field *DWI*
 
 ## How to recreate the coregistered data from raw data
 
