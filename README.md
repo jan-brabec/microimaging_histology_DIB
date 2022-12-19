@@ -5,7 +5,7 @@
 
 ## Objective
 
-To facilitate investigation of the biological underpinnings of DTI parameters, we performed ex-vivo diffusion tensor imaging (DTI) at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as the processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+To facilitate investigation of the biological underpinnings of DTI parameters, such as mean diffusivity (MD) or fractional anisotropy (FA), we performed ex-vivo diffusion tensor imaging (DTI) at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as the processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
 
 ## How to obtain data
 1. Clone this repository to Your machine.
@@ -25,7 +25,7 @@ imagesc(H);
 axis image off;
 ```
 
-* We have prepared a function that allows to view H&E, VEGF as well as Mean diffusivity and in-plane fractional anisotropy (FAIP). It allows also to zoom-in also on particular regions of the histology of DTI map by clicking on one of the maps. Navigate yourself to the folder **Step_5_View_data** and try
+* We have prepared a function that allows to view H&E, VEGF as well as Mean diffusivity and in-plane fractional anisotropy (FAIP). It allows also to zoom-in also on particular regions of the histology of DTI map by clicking on one of the maps. Navigate yourself to the folder **Step_5_View_data**
 
 ```
 view_HE_VEGF_MR(sample)
