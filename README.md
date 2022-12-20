@@ -92,7 +92,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 5. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
 6. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
 
-### Step 2: Rigid coregistration of H&E images to MRI
+### Step 2: Land-mark based rigid coregistration of H&E images to MRI
 7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**. See details in the section [Details of ridig coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#details-of-rigid-coregistration-step-2) below.
 
 
@@ -103,7 +103,7 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 10. Create a mask around H&E imageby running *draw_HE_mask* in folder **Step_3_Coreg_HE_fine**.
 11. Apply H&E mask to all coregistered images by *d_apply_HE_mask*. This will replace HE.mat files in the **Step_3_Coreg_HE_fine** with the same H&E but masked. This will also store downsample H&E mask. For quantification analyses, it is useful to combine ROI around MR images with downsampled HE mask. This will make sure that only tumor regions are selected for the analysis.
 
-### Step 4: Rigid coregistration of VEGF to H&E images
+### Step 4: Landmark-based rigid coregistration of VEGF to H&E images
 
 12. Define landmarks on the H&E and VEGF maps by running script *a_Define_landmarks* in the folder **Step_5_Coreg_VEGF_to_HE**. The interface is the same as in the previous step but do not interpolate to obtain the deformable grid or register. Define landmarks and click 's' to save them.
 13. Coregister the VEGF-stained histology to H&E-stained histology by running the script *b_Coregister_VEGF_to_HE*.
