@@ -5,12 +5,12 @@
 
 ## Objective
 
-To facilitate investigation of the biological underpinnings of DTI parameters, such as mean diffusivity (MD) or fractional anisotropy (FA), we performed ex-vivo diffusion tensor imaging (DTI) at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as the processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+To facilitate investigation of the biological underpinnings of DTI parameters, such as mean diffusivity (MD) or fractional anisotropy (FA), we performed ex-vivo diffusion tensor imaging (DTI) at 200 μm isotropic resolution on 16 excised meningioma tumor samples and coregistered them to the correspoding histology slides. Hereby, we provide the data, coregistration tool as well as the processing pipeline. To show potential of the data, we performed also an [example analysis using this data in our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas).
 
 ## How to obtain data
 1. Clone this repository to Your machine.
-2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
-3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test) of this data to the same folder (**microimaging_histology_DIB**).
+2. Download the data from [AIDA repository](https://aida-doi-repository.github.io) and paste them into folder **data** at the same level as this directory (**microimaging_histology_DIB**). The [AIDA repository](https://aida-doi-repository.github.io) contains both raw and processed data as well as data related to our [example analysis from our other manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas).
+3. You may also clone our [example analysis](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas) of this data to the same folder (**microimaging_histology_DIB**).
 
 
 ## Data formats and how to read them
@@ -61,9 +61,9 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
   * **raw_histo** folder contains multi-image *.tif* files of the histology as scanned by the digital pathology slides scanner. The *.tif* files provide 3 images with red, green and blue channels separated into three different images. The metadata obtained during the digitalization of the slices are stored in the *Metadata_HE.csv* and *metadata_VEGF.csv*. Samples 1 and 11 do not contain VEGF- but only H&E-stained histology slides because the VEGF files were corrupted during saving from the pathology slide scanner. Sample 12 does not contain metadata for the HE-stained histology slide (the file was deleted by mistake).
   * **init_MR** sub-folder contains DTI maps of a single slice prior to coregistration saved as *.mat* file.
   * **coreg_rigid** sub-folder contains approximately aligned histology with MR.
-  * **coreg_fine** sub-folder contains coregistered DTI images in *MR.mat*, cropped H&E in *HE.mat*, defined landmarks in *HE_lm_fine.mat* and structure anisotropy map that helped to coregister the images in the file *aniso2coreg.mat* (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
-  * **cell_density** sub-folder contains QuPath project with cell nuclei detected (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
-  * **structure_anisotropy** sub-folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test)).
+  * **coreg_fine** sub-folder contains coregistered DTI images in *MR.mat*, cropped H&E in *HE.mat*, defined landmarks in *HE_lm_fine.mat* and structure anisotropy map that helped to coregister the images in the file *aniso2coreg.mat* (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas)).
+  * **cell_density** sub-folder contains QuPath project with cell nuclei detected (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas)).
+  * **structure_anisotropy** sub-folder contains structure anisotropy maps (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas)).
 * The data folder also contains **DTI_raw**.
   * **raw** sub-folder contains raw *.nii* files from the two measurements of the sample holder (upper part and lower part of the sample holder)
   * **processed** sub-folder contains processed raw DTI data by DTI pipeline in [Step_1_Process_DTI](https://github.com/jan-brabec/microimaging_histology_DIB/tree/main/Step_1_Process_DTI).
@@ -119,7 +119,7 @@ view_HE_VEGF_MR(sample)
 
 
 ### What next?
-16. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas_test).
+16. You may see a sample analysis using cell density, structural anisotropy and by convolutional neuronal networks in the [repository related to our manuscript: Mean diffusivity and fractional anisotropy at the mesoscopic level in meningioma tumors: Relation with cell density and tissue anisotropy](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas).
 
 ## Details of rigid coregistration (Step 2)
 In this step, the histology image is cropped and rotated to approximately match the MR image without its shearing or image deformation. This is performed by running *Register* which performs following steps:
