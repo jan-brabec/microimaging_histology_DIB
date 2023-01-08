@@ -23,9 +23,10 @@ for sample = 1:16
             c_name = 'VEGF';
         end
         
-        i_pth_h  = fullfile('..','data',num2str(sample),'raw_histo');
-        i_pth_mr = fullfile('..','data',num2str(sample),'init_MR','ver1');
-        o_pth    = fullfile('..','data',num2str(sample),'coreg_rigid','ver1');
+        data_path = fullfile('..','..','data');
+        i_pth_h  = fullfile(data_path,num2str(sample),'raw_histo');
+        i_pth_mr = fullfile(data_path,num2str(sample),'init_MR','ver1');
+        o_pth    = fullfile(data_path,num2str(sample),'coreg_rigid','ver1');
         
         H_ref(:,:,1) = imread(fullfile(i_pth_h,strcat(c_name,'.tif')),'Index',1);
         H_ref(:,:,2) = imread(fullfile(i_pth_h,strcat(c_name,'.tif')),'Index',2);
@@ -112,7 +113,7 @@ for sample = 1:16
             clear VEGF H_rot
         end
         
-        saveas(reg_fig1,fullfile(fullfile('..',strcat(num2str(sample),'_correg_rigid_',c_name,'.png'))))
+        saveas(reg_fig1,fullfile(fullfile(strcat(num2str(sample),'_correg_rigid_',c_name,'.png'))))
     end
     
 

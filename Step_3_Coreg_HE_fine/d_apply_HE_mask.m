@@ -10,16 +10,16 @@ for sample = 1:16
     
     sample
     
-    load(fullfile('..','data',strcat(num2str(sample)),'coreg_fine','ver1','HE_mask.mat'));    
-    load(fullfile('..','data',strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'));
-    
+    data_path = fullfile('..','..','data');
+    load(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE_mask.mat'));    
+    load(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'));
     
     r = HE(:,:,1);     g = HE(:,:,2);     b = HE(:,:,3);
     r(~HE_mask) = 255; g(~HE_mask) = 255; b(~HE_mask) = 255;
     mHE(:,:,1) = r;    mHE(:,:,2) = g;    mHE(:,:,3) = b;
     HE = mHE;
     
-    save(fullfile('..','data',strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'),'HE','-v7.3');
+    save(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'),'HE','-v7.3');
 
     
     

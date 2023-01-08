@@ -1,6 +1,6 @@
 clear; clc;
 
-data_path = fullfile('..','data');
+data_path = fullfile('..','..','data');
 c_name = {'HE','VEGF'};
 
 for sample = 1:16

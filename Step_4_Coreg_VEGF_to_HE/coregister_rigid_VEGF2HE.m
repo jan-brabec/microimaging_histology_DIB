@@ -19,17 +19,66 @@ t = maketform('affine', t.T);
 
 coreg_VEGF = imtransform(VEGF, t, 'bilinear'); %Rotate
 
-%By what it should move, take median - not so depedendent on extremes
-mv = round(median(d,1));
+mv = round(median(d,1)); %By what it should move, take median - not so depedendent on extremes
 
-coreg_VEGF = imtranslate(coreg_VEGF,[mv(2) mv(1)]); %move image
-coreg_VEGF = imcrop(coreg_VEGF,[0 0 size(HE,2) size(HE,1)]); %crop the right and bottom parts
+%the rotation enlarges the image as well so this will ensure the cut the
+%left and upper corners to translate the image by appropriate distance. The
+%rotation creates black fillings that are recognized here.
+tmp = rgb2gray(coreg_VEGF);
+for c = 1:size(tmp,1)
+    if tmp(c,1) == 0
+        continue
+    else
+        limx(1) = c;
+        break
+    end
+end
+
+for c = 1:size(tmp,1)    
+    if tmp(c,end) == 0
+        continue
+    else
+        limx(2) = c;
+        break
+    end    
+end
+limx = min(limx);
+
+for c = 1:size(tmp,2)
+    if tmp(1,c) == 0
+        continue
+    else
+        limy(1) = c;
+        break
+    end
+end
+
+for c = 1:size(tmp,2)    
+    if tmp(end,c) == 0
+        continue
+    else
+        limy(2) = c;
+        break
+    end    
+end
+limy = min(limy);
+
+coreg_VEGF = imcrop(coreg_VEGF,[limy limx size(coreg_VEGF,2) size(coreg_VEGF,1)]); %delete the extra image space up and left due to rotation
+coreg_VEGF = imtranslate(coreg_VEGF,[mv(2) mv(1)]); %translate the image by the landmark distances
+coreg_VEGF = imcrop(coreg_VEGF,[0 0 size(HE,2) size(HE,1)]); %crop image to the same size as HE image
 
 if (1) %Mask on HE mask as well?
     r = coreg_VEGF(:,:,1); g = coreg_VEGF(:,:,2); b = coreg_VEGF(:,:,3);
     r(~HE_mask) = 255;     g(~HE_mask) = 255;     b(~HE_mask) = 255;
     coreg_VEGF(:,:,1) = r; coreg_VEGF(:,:,2) = g; coreg_VEGF(:,:,3) = b;
 end
+
+if (1) %Delete remaining black spots from rotation
+    r = coreg_VEGF(:,:,1); g = coreg_VEGF(:,:,2); b = coreg_VEGF(:,:,3);
+    r(r==0) = 255;     g(g==0) = 255;     b(b==0) = 255;
+    coreg_VEGF(:,:,1) = r; coreg_VEGF(:,:,2) = g; coreg_VEGF(:,:,3) = b;
+end
+
 
 clear VEGF;
 VEGF = coreg_VEGF;

@@ -3,7 +3,8 @@ function view_HE_VEGF_MR(sample)
 
 
 % Load data
-pth_VEGF_HE = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
+data_path = fullfile('..','..','data');
+pth_VEGF_HE = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
 
 load(fullfile(pth_VEGF_HE,'MR.mat'),'MR');
 load(fullfile(pth_VEGF_HE,'HE.mat'),'HE');

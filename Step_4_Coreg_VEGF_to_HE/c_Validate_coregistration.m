@@ -10,9 +10,10 @@
 
 clear all; clf; clc;
 
-sample = 1;
+sample = 15;
 
-pth = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
+data_path = fullfile('..','..','data');
+pth = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
 load(fullfile(pth,'VEGF.mat'),'VEGF');
 load(fullfile(pth,'MR.mat'),'MR');
 load(fullfile(pth,'HE.mat'),'HE');

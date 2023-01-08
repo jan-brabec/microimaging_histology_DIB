@@ -13,7 +13,7 @@
 
 clear; clc;
 
-data_path = fullfile('..','data','DTI_raw');
+data_path = fullfile('..','..','data','DTI_raw');
 
 ip = fullfile(data_path,'raw');
 

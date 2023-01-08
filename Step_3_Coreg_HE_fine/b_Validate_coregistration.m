@@ -10,7 +10,8 @@ clear; clf; clc;
 
 sample = 2;
 
-o_pth    = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
+data_path = fullfile('..','..','data');
+o_pth    = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
 
 load(fullfile(o_pth,'HE.mat'))
 load(fullfile(o_pth,'MR.mat'))

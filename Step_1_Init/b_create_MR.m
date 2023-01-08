@@ -4,8 +4,9 @@ clear; clc;
 
 ex_vivo_slices;
 
-i_pth     = fullfile('..','data','DTI_raw','processed');
-ROI_path = fullfile('..','data','DTI_raw','ROIs');
+data_path = fullfile('..','..','data');
+i_pth     = fullfile(data_path,'DTI_raw','processed');
+ROI_path = fullfile(data_path,'DTI_raw','ROIs');
 
 for sample = 1:16
     

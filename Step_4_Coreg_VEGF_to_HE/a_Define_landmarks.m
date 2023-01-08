@@ -5,12 +5,14 @@
 
 clear all; clc; clf;
 
-sample = 16;
+sample = 15;
 
-i_pth_VEGF = fullfile('..','data',num2str(sample),'coreg_rigid','ver1');
-i_pth_HE   = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
-i_pth_MR   = fullfile('..','data',num2str(sample),'init_MR','ver1');
-o_pth      = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
+data_path = fullfile('..','..','data');
+
+i_pth_VEGF = fullfile(data_path,num2str(sample),'coreg_rigid','ver1');
+i_pth_HE   = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
+i_pth_MR   = fullfile(data_path,num2str(sample),'init_MR','ver1');
+o_pth      = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
 lm_fn      = fullfile(o_pth,'VEGF2HE_lm_fine');
 
 load(fullfile(i_pth_HE,'HE.mat'),'HE');

@@ -4,15 +4,21 @@
 clear all; %there are global variable, clear all
 clf; clc;
 
-% sample = 6;
-
-for sample = 16:16
+for sample = 10:10
+    
+    if sample == 1
+        continue
+    end
+    if sample == 3
+        continue
+    end
     if sample == 11
         continue
     end
     
-    pth_VEGF  = fullfile('..','data',num2str(sample),'coreg_rigid','ver1');
-    pth_HE    = fullfile('..','data',num2str(sample),'coreg_fine','ver1');
+    data_path = fullfile('..','..','data');
+    pth_VEGF  = fullfile(data_path,num2str(sample),'coreg_rigid','ver1');
+    pth_HE    = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
     pth_lm_fn = fullfile(pth_HE,'VEGF2HE_lm_fine.mat');
     
     load(fullfile(pth_HE,'HE.mat'),'HE');

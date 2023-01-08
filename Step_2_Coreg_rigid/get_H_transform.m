@@ -122,7 +122,7 @@ end
 if sample == 14 && contrast == 1
     H = H_ref;
     H = permute(H, [2 1 3]);
-    H = cat(2,H,repmat(ones(size(H,1),3000)*255,[1 1 3]));     
+    H = cat(2,H,repmat(ones(size(H,1),3000)*255,[1 1 3]));
 end
 
 if sample == 14 && contrast == 2
@@ -135,7 +135,13 @@ if sample == 15 && contrast == 1
 end
 
 if sample == 15 && contrast == 2
-    H = rot90(H_ref,1);
+    H = H_ref;
+%     H = rot90(H_ref,1);
+    H = cat(2,repmat(ones(size(H,1),3000)*255,[1 1 3]),H); %left
+    H = cat(2,H,repmat(ones(size(H,1),3000)*255,[1 1 3])); %right
+    H = cat(1,H,repmat(ones(3000,size(H,2))*255,[1 1 3])); %bottom
+    H = cat(1,repmat(ones(3000,size(H,2))*255,[1 1 3]),H);
+    
 end
 
 if sample == 16 && contrast == 1

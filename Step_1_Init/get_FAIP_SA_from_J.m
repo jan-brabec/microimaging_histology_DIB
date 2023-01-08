@@ -1,7 +1,7 @@
-function FAIP_IA = get_FAIP_IA_from_J(J_11,J_12,J_22)
-% function FAIP_IA = get_FAIP_IA_from_J(J_11,J_12,J_22)
+function FAIP_IA = get_FAIP_SA_from_J(J_11,J_12,J_22)
+% function FAIP_IA = get_FAIP_SA_from_J(J_11,J_12,J_22)
 %
-%  Computes fractional anisotropy or image anistropy from diagonal element
+%  Computes fractional anisotropy or structure anistropy from diagonal element
 %  of the diffusion tensor and image anisotropy
 %  (according to Budde et al. 2012, NeuroImage.
 %
