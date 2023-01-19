@@ -1,4 +1,4 @@
-function FAIP_IA = get_FAIP_SA_from_J(J_11,J_12,J_22)
+function FAIP_SA = get_FAIP_SA_from_J(J_11,J_12,J_22)
 % function FAIP_IA = get_FAIP_SA_from_J(J_11,J_12,J_22)
 %
 %  Computes fractional anisotropy or structure anistropy from diagonal element
@@ -11,6 +11,6 @@ function FAIP_IA = get_FAIP_SA_from_J(J_11,J_12,J_22)
 [L1,L2] = get_L1L2_from_J(J_11,J_12,J_22);
 
 M       = (L1 + L2) / 2;
-FAIP_IA    = (L1 - L2) ./ (2 * M); %FAIP or IA - generated in the same way
+FAIP_SA    = (L1 - L2) ./ (2 * M); %FAIP or SA - generated in the same way
 
 end

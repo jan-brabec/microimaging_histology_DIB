@@ -2,11 +2,10 @@
 %
 % Select sample number and press run
 %
-% Fix number 3 - get landmarks file back!
 
 clear all; clf; clc;
 
-sample = 16;
+sample = 2;
 
 data_path = fullfile('..','..','data');
 i_pth_h  = fullfile(data_path,num2str(sample),'coreg_rigid','ver1');
@@ -20,8 +19,8 @@ load(fullfile(i_pth_MR,'MR.mat'),'MR');
 mn_reg_finetune(HE,MR.MD,lm_fn,o_pth,MR,'MR2HE',sample)
 
 if (0)
-    load(fullfile(o_pth,'aniso2coreg.mat'),'cFA')
-    mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample)
+    load(fullfile(o_pth,'SA_for_coreg.mat'),'SA')
+    mn_reg_finetune(SA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample)
 end
 
 if (0)

@@ -1,6 +1,6 @@
 clear; clc; clf;
 
-sample = 14;
+sample = 7;
 
 data_path = fullfile('..','..','data');
 load(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'));
@@ -50,6 +50,6 @@ if (0) %Save when happy
     dHE_mask = downsample_histo_ROI_to_MR_res(HE_mask,MR.ROI);
     
     %Save to HE_mask and overwrite HE with masked HE.
-    save(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE_mask.mat'),'HE_mask','dHE_mask','roi');
+    save(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE_mask.mat'),'HE_mask','dHE_mask','roi','-v7.3');
     save(fullfile(data_path,strcat(num2str(sample)),'coreg_fine','ver1','HE.mat'),'HE','-v7.3');
 end
