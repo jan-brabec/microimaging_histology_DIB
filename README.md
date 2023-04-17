@@ -168,6 +168,12 @@ load(fullfile(o_pth,'aniso2coreg.mat'),'cFA') %this will load the calculated str
 mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample) %this will coregister FAIP map to structure anisotropy map
 ```
 
+## Opening a QuPath project
+QuPath is an open software for Bioimage analysis that was used to generate cell density maps from the related research article. However, it can also be used to view the H&E-stained histology sections. If you want to open any of the images follow following instructions:
+
+* Download and install latest Qupath from: https://qupath.github.io (version that was used to run cell detection algorhitm was version 0.23)
+* d
+
 
 ## Additional notes
 * The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distribution of ImageJ containing Bioformat plugin. The red, green and blue channels were separated into three images within a single *.tif* file using Autoscale option on. The *.svs* files are not provided because they contains important metadata. The metadata from the slide scanner are, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_VEGF.csv*.
