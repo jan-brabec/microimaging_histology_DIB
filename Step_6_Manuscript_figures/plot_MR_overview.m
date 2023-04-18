@@ -2,6 +2,8 @@ clear all; clf; clc;
 
 figure(113);
 
+addpath('../Step_5_View_data');
+
 ha = tight_subplot(3,3,[.01,.01],[.01,.01],[.01,.01]);
 
 set(gcf,'color','w');
@@ -35,7 +37,7 @@ axis image off
 
 
 axes(ha(4));
-lim = 1;
+lim = 0.8;
 imagesc(process_map(MR.MD,MR.ROI,lim,0))
 colormap gray
 caxis([0 lim])
@@ -56,14 +58,14 @@ caxis([0 lim])
 axis image off
 
 axes(ha(7));
-lim = 1.5;
+lim = 1.2;
 imagesc(process_map(MR.AD,MR.ROI,lim,0))
 colormap gray
 caxis([0 lim])
 axis image off
 
 axes(ha(8));
-lim = 1;
+lim = 0.6;
 imagesc(process_map(MR.RD,MR.ROI,lim,0))
 colormap gray
 caxis([0 lim])
