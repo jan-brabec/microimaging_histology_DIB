@@ -169,7 +169,7 @@ mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample) %this will coregister
 ```
 
 # Opening a QuPath project
-QuPath is an open software for Bioimage analysis that was used to generate cell density maps from the related research article. However, it can also be used to view the histology slides - both raw or coregistered.. Here are some instruction if you want to open any of the histology slides:
+QuPath is an open software for Bioimage analysis that was used to generate cell density maps from the related research article. However, it can also be used to view the histology slides - both raw or coregistered ones. Here are some instruction if you want to open any of the histology slides:
 
 * Download and install latest QuPath from: https://qupath.github.io (version that was used to run cell detection algorhitm was version 0.23)
 * Run QuPath and click on File -> Open.
