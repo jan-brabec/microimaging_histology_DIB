@@ -18,7 +18,7 @@ end
 
 %Define limits of caxes
 lims_FAIP = 0.8;
-lims_MD   = 1.2;
+lims_MD   = 0.8;
 
 %Process maps outside of ROI
 FAIP = process_map(MR.FAIP,MR.ROI,lims_FAIP,0);
