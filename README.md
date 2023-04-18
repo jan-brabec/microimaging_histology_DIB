@@ -177,6 +177,7 @@ QuPath is an open software for Bioimage analysis that was used to generate cell 
 * You will be asked to locate the HE.jpg file. This is because when the project was created it was linked with an absolute but not relative path. The image is located in the same folder as the project file is, e.g.(e.g. for sample 1 /data/2/cell_density/QuPath/HE.jpg). This will load both the image as well as the cell nuclei detected.
 * Note that the loading of the images may take time and requires a large amount of RAM because the images are large.
 * You may also like to see the scale bar in real units (micrometers instead of pixels): if so, please modify in the Image tab (this is located between Project and Annotation tabs) fields: Pixel width and Pixel height. These can be set to the resolution 0.5 micrometers and 0.5 micrometers because at this resolution the histology slides were digitalized.
+* If you want to view view coregistered VEGF-stained histology section (which are stored as .mat -v7.3 files in the database) in QuPath you will need to save them in a QuPath readable format. QuPath can visualize .jpg files and you can modify the script [save_qupath](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas/blob/main/Step_a_Analyze_CD/save_qupath.m) to do that. QuPath may be able to read also .tif files. We have not added this optionality into QuPath because we have analysed cell density from H&E-stained images only.
 
 
 ## Additional notes
