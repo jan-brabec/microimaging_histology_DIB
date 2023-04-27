@@ -1,5 +1,5 @@
 # Manuscript: Coregistered histology sections with diffusion tensor imaging data at 200 μm resolution in meningioma tumors
-* Code and data to the manuscript: **Brabec, J., Englund, E., Bengzon, J., Szczepankiewicz, F., van Westen, D., Sundgren, P.C., Nilsson, M., 2022. Coregistered H&E- and VEGF-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors. Unpublished.**
+* Code and data to the manuscript: **Brabec, J., Englund, E., Bengzon, J., Szczepankiewicz, F., van Westen, D., Sundgren, P.C., Nilsson, M., 2022. Coregistered H&E- and EVG-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors. Unpublished.**
 
 * Contact: *jbrabec2 [at] jh [dot] edu*
 
@@ -25,10 +25,10 @@ imagesc(H);
 axis image off;
 ```
 
-* We have prepared a function that allows you to view coregistered H&E-, VEGF-stained histology section with mean diffusivity and in-plane fractional anisotropy (FAIP) maps. The function allows also one to zoom-in also on particular regions of the histology of the DTI map by clicking on one of the maps. Navigate yourself to the folder **Step_5_View_data**
+* We have prepared a function that allows you to view coregistered H&E-, EVG-stained histology section with mean diffusivity and in-plane fractional anisotropy (FAIP) maps. The function allows also one to zoom-in also on particular regions of the histology of the DTI map by clicking on one of the maps. Navigate yourself to the folder **Step_5_View_data**
 
 ```
-view_HE_VEGF_MR(sample)
+view_HE_EVG_MR(sample)
 ```
 
 * Raw DTI images are stored as compressed *.nii.gz* files. These can be viewed e.g. by GUI in [Multidimensional Diffusion MRI software](https://github.com/markus-nilsson/md-dmri).
@@ -42,8 +42,8 @@ mgui %Opens GUI
   * The *.mat (-v7.3)* can be opened using MATLAB which necessitates a license but also by a free software [Octave](https://octave.org). The images in Octave can be stored as *.tif* images instead (or other image formats without compression):
 
 ```
-load filename.mat %HE.mat or VEGF.mat or similar
-imwrite(HE,'filename_tif','tif') %Often the structure name is HE, VEGF or similar
+load filename.mat %HE.mat or EVG.mat or similar
+imwrite(HE,'filename_tif','tif') %Often the structure name is HE, EVG or similar
 ```
 
   * The data can also be opened in Python by using the mat73 module:
@@ -56,7 +56,7 @@ data = mat73.loadmat('filename.mat') #Opens the file with name 'filename.mat'
 
 ## Data structure
 * The data folder contains 16 folders numbered **1** to **16** where each corresponds to individual meningioma tumor samples. For each sample (**1-16**) you will find following sub-folders:
-  * **raw_histo** folder that contains multi-image *.tif* files of the histology sections as scanned by the digital pathology slides scanner. The *.tif* files provide 3 images with red, green, and blue channels separated into three different images. The metadata obtained during the digitalization of the slices is stored in the *Metadata_HE.csv* and *metadata_VEGF.csv*. Samples 1, 3 and 11 do not contain VEGF- but only H&E-stained histology slides because the VEGF files were corrupted during saving from the pathology slide scanner. Sample 12 does not contain metadata for the HE-stained histology slide (the file was deleted by mistake).
+  * **raw_histo** folder that contains multi-image *.tif* files of the histology sections as scanned by the digital pathology slides scanner. The *.tif* files provide 3 images with red, green, and blue channels separated into three different images. The metadata obtained during the digitalization of the slices is stored in the *Metadata_HE.csv* and *metadata_EVG.csv*. Samples 1, 3 and 11 do not contain EVG- but only H&E-stained histology slides because the EVG files were corrupted during saving from the pathology slide scanner. Sample 12 does not contain metadata for the HE-stained histology slide (the file was deleted by mistake).
   * **init_MR** sub-folder that contains DTI maps of a single slice before coregistration saved as *.mat* file.
   * **coreg_rigid** sub-folder that contains approximately aligned histology with MR.
   * **coreg_fine** sub-folder that contains coregistered DTI images in *MR.mat*, cropped H&E in *HE.mat*, defined landmarks in *HE_lm_fine.mat*, and structure anisotropy map that helped to coregister the images in the file *aniso2coreg.mat* (see [our manuscript](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas)).
@@ -86,9 +86,9 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 ### Step 1: Initialize
 4. Process the raw DTI data by running script *a_DTI_meningiomas_pipeline* in the folder **Step_1_init** from this repository.
 5. Create MR structure for the coregistration by running script *b_create_MR* in the folder **Step_1_init**. This will create **init_MR** folder.
-6. Create thumbnails for the H&E and VEGF-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
+6. Create thumbnails for the H&E and EVG-stained histology by running *c_create_histo_thumbnail.m*. This will create thumbnails in the **raw_histo** folder to give a quick overview of the data.
 
-### Step 2: Landmark-based rigid coregistration of H&E and VEGF images to MRI
+### Step 2: Landmark-based rigid coregistration of H&E and EVG images to MRI
 7. Align approximately the histological slices with MR slices by running the script *register* in the folder **Step_3_Coreg_rigid**. See details in the section [Details of rigid coregistration](https://github.com/jan-brabec/microimaging_histology_DIB/blob/main/README.md#details-of-rigid-coregistration-step-2) below.
 
 ### Step 3: Landmark-based deformable coregistration of MRI to H&E images
@@ -97,16 +97,16 @@ dps.fulldt = dt_1x6; %paste anywhere below line 24 in the script mdm-dmri/method
 10. Create a mask around H&E imageby running *draw_HE_mask* in folder **Step_3_Coreg_HE_fine**.
 11. Apply H&E mask to all coregistered images by *d_apply_HE_mask*. This will replace HE.mat files in the **Step_3_Coreg_HE_fine** with the same H&E but masked. This will also store downsampled H&E masks. For quantification analyses, it is useful to combine ROI around MR images with downsampled HE mask. This will make sure that only tumor regions are selected for the analysis.
 
-### Step 4: Landmark-based rigid coregistration of VEGF to H&E images
-12. Define landmarks on the H&E and VEGF maps by running script *a_Define_landmarks* in the folder **Step_5_Coreg_VEGF_to_HE**. The interface is the same as in the previous step but does not interpolate to obtain the deformable grid or register. Define landmarks and click 's' to save them.
-13. Coregister the VEGF-stained histology to H&E-stained histology by running the script *b_Coregister_VEGF_to_HE*.
+### Step 4: Landmark-based rigid coregistration of EVG to H&E images
+12. Define landmarks on the H&E and EVG maps by running script *a_Define_landmarks* in the folder **Step_5_Coreg_EVG_to_HE**. The interface is the same as in the previous step but does not interpolate to obtain the deformable grid or register. Define landmarks and click 's' to save them.
+13. Coregister the EVG-stained histology to H&E-stained histology by running the script *b_Coregister_EVG_to_HE*.
 14. Investigate the quality of coregistration by running script *c_Validate_coregistration* and repeat defining newer landmarks if necessary.
 
 ### Step 5: View data
 15. View the data by running the script *view_data* in the folder **Step_5_View_data**. Within this folder, you may also directly use the function
 
 ```
-view_HE_VEGF_MR(sample)
+view_HE_EVG_MR(sample)
 ```
 
 
@@ -167,11 +167,11 @@ mn_reg_finetune(cFA,MR.FAIP,lm_fn,o_pth,MR,'MR2HE',sample) %this will coregister
 * You will be asked to locate the HE.jpg file corresponding to this project. This is because when the project was created it was linked with an absolute but not relative path to this image. The image is located in the same folder as the project file, e.g.(e.g. for sample 1 /data/1/cell_density/QuPath/HE.jpg). This will load both the image as well as the cell nuclei detected.
 * Since the images are large, loading of the images may take time and also requires a large amount of memory (RAM).
 * You may want to see the scale bar (located in the left bottom corner by default) in real units instead of relative units (i.e. micrometers instead of pixels). If so, please modify following fields in the Image tab (this is located between Project and Annotation tabs): Pixel width and Pixel height. These can be set to 0.5 micrometers and 0.5 micrometers because at this resolution the histology slides were digitalized. Afterward, the scale bar will show micrometers instead of pixels.
-* If you want to view also the coregistered VEGF-stained histology section (which are stored as .mat -v7.3 files in the database) in QuPath you will need to save these images in a QuPath readable format. QuPath can visualize .jpg files and you can modify the script [save_qupath](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas/blob/main/Step_a_Analyze_CD/save_qupath.m) to save the VEGF images as .jpg files. QuPath may be able to read also .tif files. We have not added this optionality into QuPath because we have analyzed cell density from H&E-stained images only in our [related research article](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas). Please note that we could not provide a VEGF-stained histology section for tumor samples: 1, 3, and 11 because the files were corrupted during the digitalization.
+* If you want to view also the coregistered EVG-stained histology section (which are stored as .mat -v7.3 files in the database) in QuPath you will need to save these images in a QuPath readable format. QuPath can visualize .jpg files and you can modify the script [save_qupath](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas/blob/main/Step_a_Analyze_CD/save_qupath.m) to save the EVG images as .jpg files. QuPath may be able to read also .tif files. We have not added this optionality into QuPath because we have analyzed cell density from H&E-stained images only in our [related research article](https://github.com/jan-brabec/microimaging_vs_histology_in_meningeomas). Please note that we could not provide a EVG-stained histology section for tumor samples: 1, 3, and 11 because the files were corrupted during the digitalization.
 
 ## Additional notes
-* The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distributions of ImageJ containing the Bioformat plugin. The red, green, and blue channels were separated into three images within a single *.tif* file using the Autoscale option on. The *.svs* files are not provided because they contain important metadata. The metadata from the slide scanner is, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_VEGF.csv*.
-* Samples 1, 3 and 11 do not contain VEGF- but only H&E-stained histology slides because the VEGF files were corrupted during saving from the pathology slide scanner.
+* The histology slide scanner provided histology slides in *.svs* format. These were later saved as *.tif* files using [ImageJ](https://imagej.nih.gov/ij/index.html) (version 1.53t) with [Bioformat plugin](https://docs.openmicroscopy.org/bio-formats/5.8.2/users/imagej/installing.html) (version 6.11.1) that needs to be installed separately. Alternatively, they can be saved as *.tif* using [Fiji](https://imagej.net/software/fiji/downloads) which is one of the distributions of ImageJ containing the Bioformat plugin. The red, green, and blue channels were separated into three images within a single *.tif* file using the Autoscale option on. The *.svs* files are not provided because they contain important metadata. The metadata from the slide scanner is, however, provided in the file **raw_histo** as *Metadata_HE.csv* or *Metadata_EVG.csv*.
+* Samples 1, 3 and 11 do not contain EVG- but only H&E-stained histology slides because the EVG files were corrupted during saving from the pathology slide scanner.
 * Sample 12 does not contain metadata for the HE-stained histology slide (the file was deleted by mistake).
 * Licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
