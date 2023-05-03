@@ -5,12 +5,12 @@ for sample = 1:16
         clearvars -except sample contrast
         
         if sample == 1 && contrast == 2
-            VEGF = [];
+            EVG = [];
             continue;
         end
         
         if sample == 11 && contrast == 2
-            VEGF = [];
+            EVG = [];
             continue
         end
         
@@ -20,7 +20,7 @@ for sample = 1:16
         if contrast == 1
             c_name = 'HE';
         else
-            c_name = 'VEGF';
+            c_name = 'EVG';
         end
         
         data_path = fullfile('..','..','data');
@@ -107,10 +107,10 @@ for sample = 1:16
             save(fullfile(o_pth,'HE.mat'), 'HE', '-v7.3');
             clear HE H_rot
         elseif contrast == 2
-            VEGF = H_rot;
+            EVG = H_rot;
             mkdir(o_pth)
-            save(fullfile(o_pth,'VEGF.mat'), 'VEGF', '-v7.3');
-            clear VEGF H_rot
+            save(fullfile(o_pth,'EVG.mat'), 'EVG', '-v7.3');
+            clear EVG H_rot
         end
         
         saveas(reg_fig1,fullfile(fullfile(strcat(num2str(sample),'_correg_rigid_',c_name,'.png'))))

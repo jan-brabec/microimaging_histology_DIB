@@ -6,7 +6,7 @@
 % Click on one of the images in the upper row
 % Zoom in of the histology will be shown.
 % 
-% Sample 1 and 11 do not have VEGF, only HE
+% Sample 1 and 11 do not have EVG, only HE
 
 clear all; clf; clc;
 
@@ -14,8 +14,8 @@ sample = 15;
 
 data_path = fullfile('..','..','data');
 pth = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
-load(fullfile(pth,'VEGF.mat'),'VEGF');
+load(fullfile(pth,'EVG.mat'),'EVG');
 load(fullfile(pth,'MR.mat'),'MR');
 load(fullfile(pth,'HE.mat'),'HE');
 
-check_VEGF2HE(HE,VEGF)
+check_EVG2HE(HE,EVG)

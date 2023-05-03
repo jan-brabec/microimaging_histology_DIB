@@ -11,10 +11,10 @@ lm = d.lm;
 %A  = Histology
 %B  = MRI
 
-if strcmp(d.purpose,'VEGF2HE')
-    disp('Coregistration of VEGF to HE by non-rigid deformable not possible.')
+if strcmp(d.purpose,'EVG2HE')
+    disp('Coregistration of EVG to HE by non-rigid deformable not possible.')
     disp('It takes too long.')
-    disp('Define landmarks and run b_Coregister_VEGF_to_HE in Step_4_Coreg_VEGF_to_HE.')
+    disp('Define landmarks and run b_Coregister_EVG_to_HE in Step_4_Coreg_EVG_to_HE.')
     disp('This performs rigid coregistration.')
     disp('Not continuing...')
     return;

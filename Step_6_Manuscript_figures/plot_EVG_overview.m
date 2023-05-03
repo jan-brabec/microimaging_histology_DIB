@@ -17,13 +17,13 @@ for sample = 1:16
     
     data_path = fullfile('..','..','data');
     pth = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
-    load(fullfile(pth,'VEGF.mat'),'VEGF');
+    load(fullfile(pth,'EVG.mat'),'EVG');
     
     axes(ha(sample));
-    imagesc(VEGF)
+    imagesc(EVG)
     axis image off
     drawnow;
     
 end
 
-print(sprintf('VEGF_overview.png'),'-dpng','-r500')
+print(sprintf('EVG_overview.png'),'-dpng','-r500')

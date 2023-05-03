@@ -1,19 +1,19 @@
-function view_HE_VEGF_MR(sample)
-% function view_HE_VEGF_MR(sample)
+function view_HE_EVG_MR(sample)
+% function view_HE_EVG_MR(sample)
 
 
 % Load data
 data_path = fullfile('..','..','data');
-pth_VEGF_HE = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
+pth_EVG_HE = fullfile(data_path,num2str(sample),'coreg_fine','ver1');
 
-load(fullfile(pth_VEGF_HE,'MR.mat'),'MR');
-load(fullfile(pth_VEGF_HE,'HE.mat'),'HE');
+load(fullfile(pth_EVG_HE,'MR.mat'),'MR');
+load(fullfile(pth_EVG_HE,'HE.mat'),'HE');
 if sample ~= 1 && sample ~=11
-    load(fullfile(pth_VEGF_HE,'VEGF.mat'),'VEGF');
+    load(fullfile(pth_EVG_HE,'EVG.mat'),'EVG');
 else
-    warning('Samples 1 and 11 do not have coregistered VEGF')
-    warning('Loading H&E as VEGF instead')
-    VEGF = HE;
+    warning('Samples 1 and 11 do not have coregistered EVG')
+    warning('Loading H&E as EVG instead')
+    EVG = HE;
 end
 
 %Define limits of caxes
@@ -38,7 +38,7 @@ hold on;
 axis image off;
 
 axes(ha(5)); cla; hold off;
-h10 = imagesc(VEGF);
+h10 = imagesc(EVG);
 hold on;
 axis image off;
 
@@ -48,7 +48,7 @@ set(h_im, 'ButtonDownFcn', @im_click_A, 'userdata', [h5 h10]);
 axis image off;
 
 axes(ha(2)); cla; hold off;
-h_im = imagesc(VEGF);
+h_im = imagesc(EVG);
 set(h_im, 'ButtonDownFcn', @im_click_A, 'userdata', [h5 h10]);
 axis image off
 

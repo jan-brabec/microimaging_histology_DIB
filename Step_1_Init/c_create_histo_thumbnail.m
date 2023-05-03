@@ -1,7 +1,7 @@
 clear; clc;
 
 data_path = fullfile('..','..','data');
-c_name = {'HE','VEGF'};
+c_name = {'HE','EVG'};
 
 for sample = 1:16
     
@@ -10,11 +10,11 @@ for sample = 1:16
     for c_n = 1:numel(c_name)
         
         clearvars -except sample c_name c_n data_path
-        if sample == 1 && c_n == 2 %No VEGF for sample 1
+        if sample == 1 && c_n == 2 %No EVG for sample 1
             continue;
         end
         
-        if sample == 11 && c_n == 2 %No VEGF for sample 11
+        if sample == 11 && c_n == 2 %No EVG for sample 11
             continue;
         end
         

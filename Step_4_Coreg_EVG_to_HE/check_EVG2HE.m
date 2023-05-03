@@ -1,4 +1,4 @@
-function check_VEGF2HE(HE,VEGF)
+function check_EVG2HE(HE,EVG)
 % function check_result(A,B)
 %
 % Jan Brabec modified code that
@@ -13,7 +13,7 @@ h5 = imagesc(HE);
 axis image off;
 
 subplot(2,2,4);
-h10 = imagesc(VEGF);
+h10 = imagesc(EVG);
 axis image off;
 
 
@@ -23,12 +23,12 @@ set(h_im, 'ButtonDownFcn', @im_click_A, 'userdata', [h5 h10]);
 axis image off;
 
 subplot(2,2,2);
-h_im = imagesc(VEGF);
+h_im = imagesc(EVG);
 set(h_im, 'ButtonDownFcn', @im_click_B, 'userdata', [h5 h10]);
 axis image off;
 
 A_sz = size(HE);
-B_sz = size(VEGF);
+B_sz = size(EVG);
 
 s = A_sz(1:2) ./ B_sz(1:2);
 w = 800;

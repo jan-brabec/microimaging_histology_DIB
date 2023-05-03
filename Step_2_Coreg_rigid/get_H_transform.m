@@ -8,7 +8,7 @@ if sample == 1 && contrast == 1
     H = cat(2,repmat(ones(size(H,1),1000)*255,[1 1 3]),H);
 end
 
-% No VEGF for sample 1
+% No EVG for sample 1
 
 if sample == 2 && contrast == 1
     H = rot90(H_ref,2);
@@ -99,7 +99,7 @@ if sample == 11 && contrast == 1
     H = H_ref;
 end
 
-% No VEGF for sample 11
+% No EVG for sample 11
 
 if sample == 12 && contrast == 1
     H = rot90(H_ref,2);
