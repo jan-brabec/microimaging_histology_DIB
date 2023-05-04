@@ -1,7 +1,7 @@
 # Manuscript: Coregistered histology sections with diffusion tensor imaging data at 200 μm resolution in meningioma tumors
 * Code and data to the manuscript: **Brabec, J., Englund, E., Bengzon, J., Szczepankiewicz, F., van Westen, D., Sundgren, P.C., Nilsson, M., 2022. Coregistered H&E- and EVG-stained histology slides with diffusion tensor imaging data at 200 μm resolution in meningioma tumors. Unpublished.**
 
-* Contact: *jbrabec2 [at] jh [dot] edu*
+* Contact: *brabec [at] kennedykrieger [dot] org*
 
 ## Objective
 
