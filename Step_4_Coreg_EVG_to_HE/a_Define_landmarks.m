@@ -5,7 +5,7 @@
 
 clear all; clc; clf;
 
-sample = 15;
+sample = 4;
 
 data_path = fullfile('..','..','data');
 
