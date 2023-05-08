@@ -1,6 +1,6 @@
 clear all
 
-for sample = 15:16
+for sample = 1:16
     for contrast = 1:2
         clearvars -except sample contrast
         
@@ -9,16 +9,6 @@ for sample = 15:16
             continue;
         end
 
-        if sample == 3 && contrast == 1
-            EVG = [];
-            continue
-        end               
-
-        if sample == 3 && contrast == 2
-            EVG = [];
-            continue
-        end        
-        
         if sample == 11 && contrast == 2
             EVG = [];
             continue

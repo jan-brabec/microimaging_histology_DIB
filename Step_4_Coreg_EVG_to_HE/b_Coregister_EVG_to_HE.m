@@ -6,13 +6,10 @@ clf; clc;
 
 for sample = 1:16
 
-
     if sample == 1
         continue
     end
-    if sample == 3
-        continue
-    end
+
     if sample == 11
         continue
     end

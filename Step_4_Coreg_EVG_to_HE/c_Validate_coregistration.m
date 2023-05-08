@@ -10,7 +10,7 @@
 
 clear all; clf; clc;
 
-sample = 15;
+sample = 3;
 
 data_path = fullfile('..','..','data');
 pth = fullfile(data_path,num2str(sample),'coreg_fine','ver1');

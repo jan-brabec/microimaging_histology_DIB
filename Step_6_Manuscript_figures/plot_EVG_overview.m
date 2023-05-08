@@ -9,7 +9,7 @@ set(gcf,'color','white')
 
 for sample = 1:16
     
-    if sample == 1 || sample == 11 || sample == 3
+    if sample == 1 || sample == 11
         axes(ha(sample));
         axis image off
         continue;
