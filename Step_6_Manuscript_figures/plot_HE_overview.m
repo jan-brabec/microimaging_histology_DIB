@@ -5,6 +5,8 @@ figure(115);
 addpath(fullfile('..','Step_5_View_data'));
 
 ha = tight_subplot(4,4,[.0,.0],[.0,.0],[.0,.0]);
+set(gcf,'color','white')
+
 
 for sample = 1:16
     
